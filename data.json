@@ -5,16 +5,30 @@
       "title": "Team Meeting",
       "start": "2025-04-01T10:00:00",
       "end": "2025-04-01T11:00:00",
-      "color": "#20669f",
-      "description": "Discuss project updates."
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": "Discuss project updates."
+      }
     },
     {
       "id": "2",
       "title": "Workshop",
       "start": "2025-04-15T13:00:00",
       "end": "2025-04-15T15:00:00",
-      "color": "#ff4d4d",
-      "description": "Hands-on workshop for new tools."
+      "backgroundColor": "#ff4d4d",
+      "extendedProps": {
+        "description": "Hands-on workshop for new tools."
+      }
+    },
+    {
+      "id": "z6dz8soia",
+      "title": "New Event",
+      "start": "2025-03-26T01:00:00Z",
+      "end": "2025-03-26T02:30:00Z",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
     }
   ]
 }

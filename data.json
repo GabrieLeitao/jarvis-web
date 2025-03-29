@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "title": "Team Meeting",
+      "start": "2025-04-01T10:00:00",
+      "end": "2025-04-01T11:00:00"
+    },
+    {
+      "title": "Project Deadline",
+      "start": "2025-04-05T00:00:00",
+      "end": "2025-04-05T23:59:59"
+    },
+    {
+      "title": "Conference",
+      "start": "2025-04-10T09:00:00",
+      "end": "2025-04-12T17:00:00"
+    },
+    {
+      "title": "Workshop",
+      "start": "2025-04-15T13:00:00",
+      "end": "2025-04-15T15:00:00"
+    }
+  ],
+  "configurations": {
+    "theme": "blue",
+    "timeFormat": "24-hour"
+  }
+}

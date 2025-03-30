@@ -17,6 +17,7 @@ export default function CalendarComponent({
       plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
       initialView="timeGridWeek"
       events={events}
+      timeZone="local" // Ensure times are handled in the local timezone
       headerToolbar={{
         left: "prev,next today",
         center: "title",
@@ -31,13 +32,11 @@ export default function CalendarComponent({
       selectable={true} // Allow selecting dates
       editable={true} // Allow editing events
       eventChange={onEventChange}
-
       height="auto"
       dayHeaderFormat={{
         weekday: "short",
         day: "numeric",
       }}
-      
       eventTimeFormat={{
         hour: "2-digit",
         minute: "2-digit",

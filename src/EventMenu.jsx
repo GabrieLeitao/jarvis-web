@@ -11,10 +11,17 @@ export default function EventMenu({ event, onUpdate, onClose, onRemove }) {
   });
 
   useEffect(() => {
+    const toLocalDateTime = (isoString) => {
+      if (!isoString) return "";
+      const date = new Date(isoString);
+      const offset = date.getTimezoneOffset() * 60000; // Convert minutes to milliseconds
+      return new Date(date.getTime() - offset).toISOString().slice(0, 16); // Convert to local datetime
+    };
+
     setUpdatedEvent({
       title: event.title || "",
-      start: event.start ? new Date(event.start).toISOString().slice(0, 16) : "",
-      end: event.end ? new Date(event.end).toISOString().slice(0, 16) : "",
+      start: toLocalDateTime(event.start), // Convert to local datetime
+      end: toLocalDateTime(event.end), // Convert to local datetime
       description: event.extendedProps?.description || "",
       color: event.backgroundColor || "#20669f",
     });
@@ -25,10 +32,18 @@ export default function EventMenu({ event, onUpdate, onClose, onRemove }) {
   };
 
   const handleSave = () => {
+    const toISOStringWithoutOffset = (localDateTime) => {
+      const [date, time] = localDateTime.split("T");
+      const [year, month, day] = date.split("-").map(Number);
+      const [hours, minutes] = time.split(":").map(Number);
+      const localDate = new Date(year, month - 1, day, hours, minutes);
+      return localDate.toISOString(); // Convert directly to ISO string
+    };
+
     onUpdate({
       ...updatedEvent,
-      start: new Date(updatedEvent.start).toISOString(), // Ensure the start time is saved
-      end: new Date(updatedEvent.end).toISOString(), // Ensure the end time is saved
+      start: toISOStringWithoutOffset(updatedEvent.start), // Convert to ISO string
+      end: toISOStringWithoutOffset(updatedEvent.end), // Convert to ISO string
       backgroundColor: updatedEvent.color, // Ensure the color is saved
     });
   };

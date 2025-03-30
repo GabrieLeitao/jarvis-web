@@ -101,7 +101,7 @@
       }
     },
     {
-      "id": "tcfe_tp_thu",
+      "id": "tcfe_tp_fri",
       "title": "TCFE (L)",
       "start": "2025-04-04T10:30:00",
       "end": "2025-04-04T12:30:00",
@@ -109,6 +109,148 @@
       "extendedProps": {
         "description": ""
       }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "study_monday",
+      "title": "Study Session",
+      "start": "2025-03-31T06:30:00",
+      "end": "2025-03-31T08:00:00",
+      "backgroundColor": "#28a745"
+    },
+    {
+      "id": "break_monday",
+      "title": "Break",
+      "start": "2025-03-31T14:30:00",
+      "end": "2025-03-31T15:00:00",
+      "backgroundColor": "#ffcc00"
+    },
+    {
+      "id": "exercise_monday",
+      "title": "Exercise",
+      "start": "2025-03-31T18:30:00",
+      "end": "2025-03-31T19:30:00",
+      "backgroundColor": "#ff5733"
+    },
+    {
+      "id": "study_tuesday",
+      "title": "Study Session",
+      "start": "2025-04-01T06:30:00",
+      "end": "2025-04-01T08:00:00",
+      "backgroundColor": "#28a745"
+    },
+    {
+      "id": "break_tuesday",
+      "title": "Break",
+      "start": "2025-04-01T14:30:00",
+      "end": "2025-04-01T15:00:00",
+      "backgroundColor": "#ffcc00"
+    },
+    {
+      "id": "exercise_tuesday",
+      "title": "Exercise",
+      "start": "2025-04-01T18:30:00",
+      "end": "2025-04-01T19:30:00",
+      "backgroundColor": "#ff5733"
+    },
+    {
+      "id": "study_wednesday",
+      "title": "Study Session",
+      "start": "2025-04-02T06:30:00",
+      "end": "2025-04-02T08:00:00",
+      "backgroundColor": "#28a745"
+    },
+    {
+      "id": "break_wednesday",
+      "title": "Break",
+      "start": "2025-04-02T14:30:00",
+      "end": "2025-04-02T15:00:00",
+      "backgroundColor": "#ffcc00"
+    },
+    {
+      "id": "exercise_wednesday",
+      "title": "Exercise",
+      "start": "2025-04-02T18:30:00",
+      "end": "2025-04-02T19:30:00",
+      "backgroundColor": "#ff5733"
+    },
+    {
+      "id": "study_thursday",
+      "title": "Study Session",
+      "start": "2025-04-03T06:30:00",
+      "end": "2025-04-03T08:00:00",
+      "backgroundColor": "#28a745"
+    },
+    {
+      "id": "break_thursday",
+      "title": "Break",
+      "start": "2025-04-03T14:30:00",
+      "end": "2025-04-03T15:00:00",
+      "backgroundColor": "#ffcc00"
+    },
+    {
+      "id": "exercise_thursday",
+      "title": "Exercise",
+      "start": "2025-04-03T18:30:00",
+      "end": "2025-04-03T19:30:00",
+      "backgroundColor": "#ff5733"
+    },
+    {
+      "id": "study_friday",
+      "title": "Study Session",
+      "start": "2025-04-04T06:30:00",
+      "end": "2025-04-04T08:00:00",
+      "backgroundColor": "#28a745"
+    },
+    {
+      "id": "break_friday",
+      "title": "Break",
+      "start": "2025-04-04T14:30:00",
+      "end": "2025-04-04T15:00:00",
+      "backgroundColor": "#ffcc00"
+    },
+    {
+      "id": "exercise_friday",
+      "title": "Exercise",
+      "start": "2025-04-04T18:30:00",
+      "end": "2025-04-04T19:30:00",
+      "backgroundColor": "#ff5733"
+    },
+    {
+      "id": "piano_monday",
+      "title": "Play Piano",
+      "start": "2025-03-31T15:00:00",
+      "end": "2025-03-31T16:00:00",
+      "backgroundColor": "#a2d5f2"
+    },
+    {
+      "id": "cooking_monday",
+      "title": "Cooking",
+      "start": "2025-03-31T19:30:00",
+      "end": "2025-03-31T20:30:00",
+      "backgroundColor": "#ff7043"
+    },
+    {
+      "id": "piano_tuesday",
+      "title": "Play Piano",
+      "start": "2025-04-01T15:00:00",
+      "end": "2025-04-01T16:00:00",
+      "backgroundColor": "#a2d5f2"
+    },
+    {
+      "id": "cooking_tuesday",
+      "title": "Cooking",
+      "start": "2025-04-01T19:30:00",
+      "end": "2025-04-01T20:30:00",
+      "backgroundColor": "#ff7043"
+    },
+    {
+      "id": "piano_wednesday",
+      "title": "Play Piano",
+      "start": "2025-04-02T15:00:00",
+      "end": "2025-04-02T16:00:00",
+      "backgroundColor": "#a2d5f2"
     }
   ]
 }

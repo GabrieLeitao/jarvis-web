@@ -4,18 +4,18 @@ import "./EventMenu.css"; // Import the CSS file
 export default function EventMenu({ event, onUpdate, onClose, onRemove }) {
   const [updatedEvent, setUpdatedEvent] = useState({
     title: event.title || "",
-    start: event.start ? event.start.toISOString().slice(0, 16) : "",
-    end: event.end ? event.end.toISOString().slice(0, 16) : "",
-    description: event.extendedProps.description || "",
+    start: event.start ? new Date(event.start).toISOString().slice(0, 16) : "",
+    end: event.end ? new Date(event.end).toISOString().slice(0, 16) : "",
+    description: event.extendedProps?.description || "",
     color: event.backgroundColor || "#20669f",
   });
 
   useEffect(() => {
     setUpdatedEvent({
       title: event.title || "",
-      start: event.start ? event.start.toISOString().slice(0, 16) : "",
-      end: event.end ? event.end.toISOString().slice(0, 16) : "",
-      description: event.extendedProps.description || "",
+      start: event.start ? new Date(event.start).toISOString().slice(0, 16) : "",
+      end: event.end ? new Date(event.end).toISOString().slice(0, 16) : "",
+      description: event.extendedProps?.description || "",
       color: event.backgroundColor || "#20669f",
     });
   }, [event]);
@@ -25,7 +25,11 @@ export default function EventMenu({ event, onUpdate, onClose, onRemove }) {
   };
 
   const handleSave = () => {
-    onUpdate(updatedEvent);
+    onUpdate({
+      ...updatedEvent,
+      start: new Date(updatedEvent.start).toISOString(),
+      end: new Date(updatedEvent.end).toISOString(),
+    });
   };
 
   const handleRemove = () => {

@@ -33,17 +33,27 @@ export default function EventMenu({ event, onUpdate, onClose, onRemove }) {
 
   const handleSave = () => {
     const toISOStringWithoutOffset = (localDateTime) => {
+      if (!localDateTime) return null; // Handle empty or invalid input
       const [date, time] = localDateTime.split("T");
       const [year, month, day] = date.split("-").map(Number);
       const [hours, minutes] = time.split(":").map(Number);
       const localDate = new Date(year, month - 1, day, hours, minutes);
+      if (isNaN(localDate.getTime())) return null; // Handle invalid date
       return localDate.toISOString(); // Convert directly to ISO string
     };
 
+    const startISO = toISOStringWithoutOffset(updatedEvent.start);
+    const endISO = toISOStringWithoutOffset(updatedEvent.end);
+
+    if (!startISO || !endISO) {
+      alert("Please provide valid start and end times.");
+      return;
+    }
+
     onUpdate({
       ...updatedEvent,
-      start: toISOStringWithoutOffset(updatedEvent.start), // Convert to ISO string
-      end: toISOStringWithoutOffset(updatedEvent.end), // Convert to ISO string
+      start: startISO, // Convert to ISO string
+      end: endISO, // Convert to ISO string
       backgroundColor: updatedEvent.color, // Ensure the color is saved
     });
   };

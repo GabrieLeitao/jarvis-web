@@ -160,7 +160,7 @@ export default function App() {
       while (currentTime < endOfDay) {
         const availableTasks = predefinedTasks.filter(
           (task) =>
-            taskCounts[task.title] < 3 && // Limit each task type to a maximum of 3 per day
+            taskCounts[task.title] < 5 && // Increase the maximum number of tasks per day
             (task.title !== "Break" || lastTaskType === "Study Session" || lastTaskType === "Work Session") && // Add breaks only after study or work sessions
             task.title !== lastTaskType // Avoid consecutive tasks of the same type
         );
@@ -169,6 +169,7 @@ export default function App() {
 
         const randomTask = availableTasks[Math.floor(Math.random() * availableTasks.length)];
         const taskDuration =
+          randomTask.duration ||
           Math.floor(Math.random() * (randomTask.maxDuration - randomTask.minDuration + 1)) +
           randomTask.minDuration;
 
@@ -178,7 +179,7 @@ export default function App() {
 
         // Skip if the task overlaps with existing events or fixed tasks
         if (doesOverlap(taskStart, taskEnd, [...existingEvents, ...schedule])) {
-          currentTime.setMinutes(currentTime.getMinutes() + 15); // Skip 15 minutes
+          currentTime.setMinutes(currentTime.getMinutes() + 5); // Skip 5 minutes
           continue;
         }
 

@@ -1,20 +1,114 @@
 {
   "events": [
     {
-      "id": "1",
-      "title": "Team Meeting",
-      "start": "2025-04-01T10:00:00",
-      "end": "2025-04-01T11:00:00",
-      "color": "#20669f",
-      "description": "Discuss project updates."
+      "id": "tcfe_tp_mon",
+      "title": "TCFE (TP)",
+      "start": "2025-03-31T08:00:00",
+      "end": "2025-03-31T10:00:00",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
     },
     {
-      "id": "2",
-      "title": "Workshop",
-      "start": "2025-04-15T13:00:00",
-      "end": "2025-04-15T15:00:00",
-      "color": "#ff4d4d",
-      "description": "Hands-on workshop for new tools."
+      "id": "pe_tp_mon",
+      "title": "PEstatisticad (TP)",
+      "start": "2025-03-31T10:00:00",
+      "end": "2025-03-31T11:30:00",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
+    },
+    {
+      "id": "t_mon",
+      "title": "T (T)",
+      "start": "2025-03-31T12:00:00",
+      "end": "2025-03-31T14:00:00",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
+    },
+    {
+      "id": "t_pb_tue",
+      "title": "T (Pb)",
+      "start": "2025-04-01T08:00:00",
+      "end": "2025-04-01T10:00:00",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
+    },
+    {
+      "id": "pe_tp_tur",
+      "title": "PEstatisticad (TP)",
+      "start": "2025-04-01T10:00:00",
+      "end": "2025-04-01T11:30:00",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
+    },
+    {
+      "id": "t_tue",
+      "title": "T (T)",
+      "start": "2025-04-01T12:00:00",
+      "end": "2025-04-01T14:00:00",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
+    },
+    {
+      "id": "tcfe_tp_wed",
+      "title": "TCFE (TP)",
+      "start": "2025-04-02T08:00:00",
+      "end": "2025-04-02T10:00:00",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
+    },
+    {
+      "id": "t_wed",
+      "title": "T (T)",
+      "start": "2025-04-02T10:00:00",
+      "end": "2025-04-02T12:00:00",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
+    },
+    {
+      "id": "pe_pb_wed",
+      "title": "PEstatisticad (Pb)",
+      "start": "2025-04-02T12:00:00",
+      "end": "2025-04-02T13:00:00",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
+    },
+    {
+      "id": "tcfe_tp_thu",
+      "title": "TCFE (TP)",
+      "start": "2025-04-03T10:00:00",
+      "end": "2025-04-03T12:00:00",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
+    },
+    {
+      "id": "tcfe_tp_thu",
+      "title": "TCFE (L)",
+      "start": "2025-04-04T10:30:00",
+      "end": "2025-04-04T12:30:00",
+      "backgroundColor": "#20669f",
+      "extendedProps": {
+        "description": ""
+      }
     }
   ]
 }

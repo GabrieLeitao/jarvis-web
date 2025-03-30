@@ -1,0 +1,36 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Lazer no Parque",
+      "start": "2023-10-05T15:00:00",
+      "end": "2023-10-05T17:00:00",
+      "color": "#34a853",
+      "description": "Tempo para relaxar no parque."
+    },
+    {
+      "id": "2",
+      "title": "Treino de Corrida",
+      "start": "2023-10-06T07:00:00",
+      "end": "2023-10-06T08:00:00",
+      "color": "#fbbc05",
+      "description": "Treino matinal de corrida."
+    },
+    {
+      "id": "3",
+      "title": "Almoço",
+      "start": "2023-10-06T12:00:00",
+      "end": "2023-10-06T13:00:00",
+      "color": "#4285f4",
+      "description": "Hora do almoço."
+    },
+    {
+      "id": "4",
+      "title": "Jantar",
+      "start": "2023-10-06T19:00:00",
+      "end": "2023-10-06T20:00:00",
+      "color": "#ea4335",
+      "description": "Hora do jantar."
+    }
+  ]
+}

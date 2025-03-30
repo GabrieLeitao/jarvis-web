@@ -6,6 +6,8 @@ export default function App() {
   const [events, setEvents] = useState([]);
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [listening, setListening] = useState(false); // State to track if microphone is active
+  const [feedback, setFeedback] = useState(""); // State for feedback message
 
   const API_BASE_URL = "http://localhost:5000"; // Ensure this matches your backend server
 
@@ -133,6 +135,76 @@ export default function App() {
     changeInfo.event.setEnd(changeInfo.event.end);
   };
 
+  const handleVoiceCommand = () => {
+    if (!("webkitSpeechRecognition" in window)) {
+      alert("Speech recognition is not supported in this browser.");
+      return;
+    }
+
+    const recognition = new window.webkitSpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onstart = () => {
+      setListening(true);
+      setFeedback("Listening...");
+    };
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript.toLowerCase();
+      setFeedback(`Heard: "${transcript}"`);
+      processVoiceCommand(transcript);
+    };
+
+    recognition.onerror = (event) => {
+      setFeedback("Error occurred during recognition.");
+      console.error("Speech recognition error:", event.error);
+    };
+
+    recognition.onend = () => {
+      setListening(false);
+    };
+
+    recognition.start();
+  };
+
+  const processVoiceCommand = (command) => {
+    if (command.includes("add event")) {
+      const titleMatch = command.match(/title:\s*([^,]+)/i);
+      const startMatch = command.match(/start:\s*([^,]+)/i);
+      const endMatch = command.match(/end:\s*([^,]+)/i);
+      const descriptionMatch = command.match(/description:\s*([^,]+)/i);
+
+      const newEvent = {
+        id: Math.random().toString(36).substr(2, 9),
+        title: titleMatch ? titleMatch[1].trim() : "New Event",
+        start: startMatch ? startMatch[1].trim() : new Date().toISOString(),
+        end: endMatch ? endMatch[1].trim() : new Date().toISOString(),
+        backgroundColor: "#20669f",
+        extendedProps: {
+          description: descriptionMatch ? descriptionMatch[1].trim() : "",
+        },
+      };
+
+      const updatedEvents = [...events, newEvent];
+      setEvents(updatedEvents);
+      saveEventsToBackend(updatedEvents);
+      setFeedback("Event added successfully!");
+    } else if (command.includes("optimize schedule")) {
+      optimizeSchedule();
+    } else {
+      setFeedback("Command not recognized. Try 'Add event' or 'Optimize schedule'.");
+    }
+  };
+
+  const optimizeSchedule = () => {
+    const sortedEvents = [...events].sort((a, b) => new Date(a.start) - new Date(b.start));
+    setEvents(sortedEvents);
+    saveEventsToBackend(sortedEvents);
+    alert("Schedule optimized!");
+  };
+
   return (
     <div style={{ display: "flex", flexDirection: "row", gap: "20px", padding: "20px", position: "relative" }}>
       <div style={{ flex: 1 }}>
@@ -160,6 +232,41 @@ export default function App() {
             onRemove={handleEventRemove}
             onClose={() => setSelectedEvent(null)}
           />
+        </div>
+      )}
+      <button
+        onClick={handleVoiceCommand}
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          zIndex: 1000,
+          backgroundColor: listening ? "#ff4d4d" : "#007bff",
+          color: "white",
+          border: "none",
+          borderRadius: "50%",
+          width: "60px",
+          height: "60px",
+          fontSize: "1.5rem",
+          cursor: "pointer",
+        }}
+      >
+        🎤
+      </button>
+      {feedback && (
+        <div
+          style={{
+            position: "fixed",
+            bottom: "90px",
+            right: "20px",
+            backgroundColor: "#ffffff",
+            padding: "10px",
+            borderRadius: "8px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+            zIndex: 1000,
+          }}
+        >
+          {feedback}
         </div>
       )}
     </div>

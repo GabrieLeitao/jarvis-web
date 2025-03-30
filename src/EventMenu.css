@@ -1,0 +1,124 @@
+.event-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dim the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.event-menu {
+  background: #ffffff;
+  padding: 25px; /* Ensure consistent padding */
+  box-sizing: border-box; /* Include padding in width calculations */
+  border-radius: 12px;
+  width: 350px; /* Reduced width */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1100;
+  font-family: "Arial", sans-serif;
+}
+
+.event-menu h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333333;
+  text-align: center;
+}
+
+.event-menu label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+.event-menu input,
+.event-menu textarea {
+  width: calc(100% - 20px); /* Ensure consistent width with padding */
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #333333;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+.event-menu input:focus,
+.event-menu textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.event-menu input[type="color"] {
+  width: 2.5rem; /* Slightly larger width */
+  height: 1.5rem; /* Slightly larger height */
+  padding: 0; /* Remove padding */
+  border: none; /* Remove border */
+  cursor: pointer; /* Add pointer cursor */
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 4px; /* Add rounded corners */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.event-menu input[type="color"]::-webkit-color-swatch {
+  border: 1px solid #cccccc; /* Add border to the color swatch */
+  border-radius: 4px; /* Add rounded corners */
+}
+
+.event-menu input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0; /* Remove padding around the swatch */
+}
+
+.event-menu-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.event-menu-buttons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-menu-buttons button:first-of-type {
+  background-color: #007bff;
+  color: white;
+}
+
+.event-menu-buttons button:first-of-type:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.event-menu-buttons button:nth-of-type(2) {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.event-menu-buttons button:nth-of-type(2):hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+.event-menu-buttons button:last-of-type {
+  background-color: #cccccc;
+  color: black;
+}
+
+.event-menu-buttons button:last-of-type:hover {
+  background-color: #999999;
+  transform: scale(1.05);
+}

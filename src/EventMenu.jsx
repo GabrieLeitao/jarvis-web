@@ -27,8 +27,9 @@ export default function EventMenu({ event, onUpdate, onClose, onRemove }) {
   const handleSave = () => {
     onUpdate({
       ...updatedEvent,
-      start: new Date(updatedEvent.start).toISOString(),
-      end: new Date(updatedEvent.end).toISOString(),
+      start: new Date(updatedEvent.start).toISOString(), // Ensure the start time is saved
+      end: new Date(updatedEvent.end).toISOString(), // Ensure the end time is saved
+      backgroundColor: updatedEvent.color, // Ensure the color is saved
     });
   };
 

@@ -305,13 +305,6 @@ export default function App() {
     );
 
     setEvents(updatedEvents); // Update the events in memory
-
-    selectedEvent.setProp("title", updatedProps.title);
-    selectedEvent.setExtendedProp("description", updatedProps.description);
-    selectedEvent.setStart(updatedProps.start);
-    selectedEvent.setEnd(updatedProps.end);
-    selectedEvent.setProp("backgroundColor", updatedProps.backgroundColor); // Update the color in the calendar
-
     setSelectedEvent(null); // Close the EventMenu
   };
 
@@ -361,13 +354,19 @@ export default function App() {
           onDateSelect={(selectInfo) => {
             const newEvent = {
               id: Math.random().toString(36).substr(2, 9),
-              title: "New Event",
+              title: "", // Set title to an empty string to show the placeholder
               start: selectInfo.startStr,
               end: selectInfo.endStr,
               backgroundColor: "#20669f",
               extendedProps: { description: "" },
             };
+
             setEvents([...events, newEvent]);
+            setSelectedEvent(newEvent); // Open EventMenu for the new event
+            setMenuPosition({
+              top: selectInfo.jsEvent.clientY + window.scrollY,
+              left: selectInfo.jsEvent.clientX + window.scrollX,
+            });
           }}
           onEventChange={handleEventChange} // Handle event changes
           editable={true} // Allow editing events

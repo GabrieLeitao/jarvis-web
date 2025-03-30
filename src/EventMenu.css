@@ -31,10 +31,9 @@
 }
 
 .event-menu label {
-  display: block;
-  margin-bottom: 15px;
-  font-size: 0.9rem;
-  color: #555555;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .event-menu input,
@@ -58,12 +57,13 @@
 }
 
 .event-menu input[type="color"] {
-  width: 2.5rem; /* Slightly larger width */
-  height: 1.5rem; /* Slightly larger height */
-  padding: 0; /* Remove padding */
-  border: none; /* Remove border */
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  margin-top: 5px; /* Add spacing between label and input */
+  align-self: flex-start; /* Align the color input properly */
   cursor: pointer; /* Add pointer cursor */
-  margin-top: 5px;
   margin-bottom: 15px;
   border-radius: 4px; /* Add rounded corners */
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
